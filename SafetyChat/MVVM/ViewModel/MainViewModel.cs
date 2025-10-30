@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SafetyChat.MVVM.ViewModel
 {
-    internal class MainViewModel
+    class MainViewModel
     {
     }
 }

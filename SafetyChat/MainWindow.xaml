@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SafetyChat" xmlns:viewmodel="clr-namespace:SafetyChat.MVVM.ViewModel"
         mc:Ignorable="d"
         Height="650" Width="1200"
-        Background="#483D8B"
+        Background="#2F4F4F"
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip">
@@ -27,7 +27,7 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.ColumnSpan="2"
-                Background="#191970"
+                Background="#708090"
                 Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -40,14 +40,14 @@
 
                 <Label Grid.Column="0"
                        Content="Safety Chat"
-                       Foreground="Pink"
+                       Foreground="#FAEBD7"
                        FontWeight="SemiBold"
                        VerticalAlignment="Center"
-                       Margin="10,0,0,0"/>
+                       Margin="0,0,0,0"/>
 
                 <Button Grid.Column="2"
                         BorderThickness="0"
-                        Foreground="Pink"
+                        Foreground="#FAEBD7"
                         Background="Transparent"
                         Width="20"                        
                         Height="20"
@@ -58,7 +58,7 @@
                 <Button 
                          Grid.Column="3"
                          BorderThickness="0"
-                         Foreground="Pink"
+                         Foreground="#FAEBD7"
                          Background="Transparent"
                          Width="20"
                          Height="20"
@@ -68,16 +68,38 @@
                          Margin="0,0,10,0"/>
 
                 <Button Grid.Column="4"
-                        Foreground="Pink"
+                        Foreground="#FAEBD7"
                         BorderThickness="0"
                         Background="Transparent"
                         Width="20"
                         Height="20"
                         Content="X"
+                        Click="CloseButton_Click"
                         VerticalAlignment="Center"
                         Margin="0,0,10,0"/>
             </Grid>
         </Border>
+
+        <Grid Background="	#696969"
+              Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+           </Grid.RowDefinitions>
+
+            <Label Content="Contacts"
+                  VerticalAlignment="Center"
+                  FontWeight="Medium"
+                  Foreground="#FAEBD7"
+                  Margin=" 8,0,0,0"/>
+
+            <ListView ItemsSource="{Binding Contacts}"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      Grid.Row="1"/>
+
+        </Grid>
 
     </Grid>
 </Window>

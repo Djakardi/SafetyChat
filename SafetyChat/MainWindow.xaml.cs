@@ -39,5 +39,10 @@ namespace SafetyChat
             else
                 Application.Current.MainWindow.WindowState = WindowState.Normal;        
         }
+
+        private void CloseButton_Click (object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
