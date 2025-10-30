@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:SafetyChat"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/ContactsCard.xaml"/>
+                <ResourceDictionary Source="Themes/ChatItem.xaml"/>
+                <ResourceDictionary Source="Themes/MessageBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>         
     </Application.Resources>
 </Application>
