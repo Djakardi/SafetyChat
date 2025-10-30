@@ -14,8 +14,8 @@
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
-    
-    <Grid>
+
+    <Grid Margin="1,0,-1,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
@@ -27,25 +27,57 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.ColumnSpan="2"
-                Background="#191970">
+                Background="#191970"
+                Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            <Grid HorizontalAlignment="Stretch">
-                <Label Foreground="Gold"
-                        FontWeight="SemiBold">
+                <Label Grid.Column="0"
+                       Content="Safety Chat"
+                       Foreground="Pink"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       Margin="10,0,0,0"/>
 
+                <Button Grid.Column="2"
+                        BorderThickness="0"
+                        Foreground="Pink"
+                        Background="Transparent"
+                        Width="20"                        
+                        Height="20"
+                        Content="___"
+                        VerticalAlignment="Center"
+                        Margin="0,0,10,0"/>
 
-                    <StackPanel 
-                        HorizontalAlignment="Stretch"
-                        Orientation="Horizontal">
-                        <TextBlock Text="Safety Chat"/>
+                <Button 
+                         Grid.Column="3"
+                         BorderThickness="0"
+                         Foreground="Pink"
+                         Background="Transparent"
+                         Width="20"
+                         Height="20"
+                         Content="☐"
+                         Click="WindowsStateButton_Click"
+                         VerticalAlignment="Center"
+                         Margin="0,0,10,0"/>
 
-                        <Button Width="20" Height="20" HorizontalAlignment="Right"/>
-                    </StackPanel>
-                </Label>
-
+                <Button Grid.Column="4"
+                        Foreground="Pink"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Width="20"
+                        Height="20"
+                        Content="X"
+                        VerticalAlignment="Center"
+                        Margin="0,0,10,0"/>
             </Grid>
-
         </Border>
-        
+
     </Grid>
 </Window>
