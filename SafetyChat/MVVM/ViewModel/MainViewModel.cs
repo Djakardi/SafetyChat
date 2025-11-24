@@ -30,6 +30,17 @@ namespace SafetyChat.MVVM.ViewModel
             Messages = new ObservableCollection<MessageModel>();
             Contacts = new ObservableCollection<ContactModel>();
 
+            SendCommand = new RelayCommand(o => 
+            {
+                Messages.Add(new MessageModel
+                {
+                    Message = Message,
+                    FirstMessage = false,
+                    UsernameColor = "#409aff",
+                    UserName = "Alisson",
+                });
+            });
+
             Messages.Add(new MessageModel
             {
                 UserName = "Allison",
