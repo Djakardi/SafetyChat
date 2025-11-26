@@ -12,17 +12,25 @@ namespace SafetyChat.MVVM.ViewModel
         /* Commands */
 
         public RelayCommand? SendCommand { get; set; }
-        public required ContactModel SelectedContact { get; set; }
+        
+        private ContactModel? _selectedContact;
+
+        public ContactModel? SelectedContact
+        {
+            get { return _selectedContact; }
+            set
+            { 
+                _selectedContact = value;
+                OnPropertyChanged();
+            }
+        }
 
         private string? _message;
 
         public string? Message
         {
             get { return _message; }
-            set { 
-                    _message = value;
-                    OnPropertyChanged();
-                }
+            set { _message = value; }
         }
 
         public MainViewModel()
@@ -30,21 +38,31 @@ namespace SafetyChat.MVVM.ViewModel
             Messages = new ObservableCollection<MessageModel>();
             Contacts = new ObservableCollection<ContactModel>();
 
-            SendCommand = new RelayCommand(o => 
+            SendCommand = new RelayCommand(o =>
             {
                 Messages.Add(new MessageModel
                 {
                     Message = Message,
                     FirstMessage = false,
-                    UsernameColor = "#409aff",
+                    UsernameColor = "#9370DB",
                     UserName = "Alisson",
                 });
+
+                Message = "";
+            });
+
+            Messages.Add(new MessageModel
+            {
+                Message = Message ?? string.Empty,
+                FirstMessage = false,
+                UsernameColor = "#9370DB",
+                UserName = "Alisson",
             });
 
             Messages.Add(new MessageModel
             {
                 UserName = "Allison",
-                UsernameColor = "#409aff",
+                UsernameColor = "#9370DB",
                 ImageSource = "https://www.thisisanfield.com/wp-content/uploads/P2022-11-24-FIFA_WC_Brazil_Serbia-67.jpg",
                 Message = "Test",
                 Time = DateTime.Now,
@@ -57,7 +75,7 @@ namespace SafetyChat.MVVM.ViewModel
                 Messages.Add(new MessageModel
                 {
                     UserName = "Alisson",
-                    UsernameColor = "#409aff",
+                    UsernameColor = "#9370DB",
                     ImageSource = "https://www.thisisanfield.com/wp-content/uploads/P2022-11-24-FIFA_WC_Brazil_Serbia-67.jpg",
                     Message = "Test",
                     Time = DateTime.Now,
@@ -71,7 +89,7 @@ namespace SafetyChat.MVVM.ViewModel
                 Messages.Add(new MessageModel
                 {
                     UserName = "Bunny",
-                    UsernameColor = "#409aff",
+                    UsernameColor = "#9370DB",
                     ImageSource = "https://www.thisisanfield.com/wp-content/uploads/P2022-11-24-FIFA_WC_Brazil_Serbia-67.jpg",
                     Message = "Test",
                     Time = DateTime.Now,
@@ -81,8 +99,8 @@ namespace SafetyChat.MVVM.ViewModel
             Messages.Add(new MessageModel
             {
                 UserName = "Bunny",
-                UsernameColor = "#409aff",
-                ImageSource = "https://www.thisisanfield.com/wp-content/uploads/P2022-11-24-FIFA_WC_Brazil_Serbia-67.jpg",
+                UsernameColor = "#9370DB",
+                ImageSource = "https://yapx.ru/album/cOM2c",
                 Message = "Last",
                 Time = DateTime.Now,
                 IsNativeOrigin = true,

@@ -95,6 +95,7 @@
                   Margin=" 8,0,0,0"/>
 
             <ListView ItemsSource="{Binding Contacts}"
+                      SelectedItem="{Binding Path=SelectedContact}"
                       Background="Transparent"
                       BorderThickness="0"
                       Grid.Row="1"
